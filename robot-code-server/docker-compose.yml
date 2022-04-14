@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  code-server:
+    image: lscr.io/linuxserver/code-server
+    container_name: code-server
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Bratislava
+      - PASSWORD=BezpecneHeslo7531_ 
+      - SUDO_PASSWORD=EsteBezpecnejsieHeslo_1265
+      - PROXY_DOMAIN=ddns.net #optional
+      - DEFAULT_WORKSPACE=/config/workspace #optional
+    volumes:
+    # Ak chcete uchovať dáta na disku, treba mountnúť docker volume k zložke na hostovi. 
+    # Ak nie, zakomentujte nasledujúci riadok a vyrobí sa vlastný docker volume.
+    #   <host_path>:<docker_path> 
+      # - /media/pi/SSD/code-server-test/config:/config
+      - ${PWD}/init-scripts:/config/custom-cont-init.d
+    ports:
+      - 8443:8443
+    restart: unless-stopped
