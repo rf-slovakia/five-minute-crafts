@@ -14,7 +14,8 @@ services:
     volumes:
     # Na nasledujúcom riadku mountneme aktuálny adresár hlavne kvôli automatickému nainštalovaniu RF a extensions do code-serveru, 
     # ale aj kvôli persistentnému uloženiu dát na hostovi (nie v docker volume). 
-      - ./init-scripts:/config/custom-cont-init.d
+      - ./init-scripts/:/config/custom-cont-init.d
+      - ./extensions_config/:/config/data/User/
     ports:
       - 8443:8443
     restart: unless-stopped

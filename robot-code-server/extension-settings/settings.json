@@ -1,0 +1,5 @@
+{
+    "robot.completions.keywords.format": "First upper",
+    "robot.language-server.python": "/usr/bin/python3.9",
+    "robot.python.executable": "/usr/bin/python3.9"
+}

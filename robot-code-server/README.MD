@@ -5,12 +5,12 @@
   sudo apt install docker
   sudo apt install docker-compose
   ```
-
 1. Naklonujte tento repozitár: 
     `git clone https://github.com/rf-slovakia/five-minute-crafts.git`
 
 1. Spustite docker-compose 
   ```
   cd five-minute-crafts/robot-code-server
-  docker-compose up -d
+  sudo docker-compose up -d
   ``` 
+1. V browseri chodte na http://0.0.0.0:8443 a zadajte heslo BezpecneHeslo7531_
