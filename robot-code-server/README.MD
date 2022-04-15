@@ -14,3 +14,4 @@
   sudo docker-compose up -d
   ``` 
 1. V browseri chodte na http://0.0.0.0:8443 a zadajte heslo BezpecneHeslo7531_
+1. Vo files otvorte spustite test.robot 

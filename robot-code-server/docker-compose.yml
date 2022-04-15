@@ -9,13 +9,14 @@ services:
       - PGID=1000
       - TZ=Europe/Bratislava
       - PASSWORD=BezpecneHeslo7531_
-      - SUDO_PASSWORD=EsteBezpecnejsieHeslo_1265
+      - SUDO_PASSWORD=EsteBezpecnejsieHeso_1265
       - DEFAULT_WORKSPACE=/config/workspace
     volumes:
     # Na nasledujúcom riadku mountneme aktuálny adresár hlavne kvôli automatickému nainštalovaniu RF a extensions do code-serveru, 
     # ale aj kvôli persistentnému uloženiu dát na hostovi (nie v docker volume). 
-      - ./init-scripts/:/config/custom-cont-init.d
-      - ./extensions_config/:/config/data/User/
+      - ./init-scripts/install_rf_and_extensions.sh:/config/custom-cont-init.d/install_rf_and_extensions.sh
+      - ./extension-settings/settings.json:/config/data/User/settings.json
+      - ./workspace:/config/workspace
     ports:
       - 8443:8443
     restart: unless-stopped
